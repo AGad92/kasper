@@ -570,11 +570,18 @@ header nav .form i {
   padding-bottom: var(--section-padding);
 }
 #our-skills .container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+}
+@media (width>= 992px) {
+  #our-skills .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
 }
 
+#our-skills .container .testimonial {
+  margin-bottom: 40px;
+}
 #our-skills .container h3 {
   font-weight: normal;
   text-transform: uppercase;
@@ -586,7 +593,7 @@ header nav .form i {
   margin-bottom: 60px;
   text-align: center;
 }
-#our-skills .container> div {
+#our-skills .container > div {
   flex-basis: 45%;
 }
 #our-skills .container .content {
@@ -602,7 +609,7 @@ header nav .form i {
   border-bottom: 1px solid #ccc;
   line-height: 1.8;
 }
-#our-skills .container .content .text  p:last-of-type {
+#our-skills .container .content .text p:last-of-type {
   text-align: right;
   margin-bottom: 10px;
   color: #777;
@@ -616,11 +623,129 @@ header nav .form i {
 #our-skills .container .testimonial .bullets li {
   width: 15px;
   height: 15px;
- border: 1px solid #ccc;
+  border: 1px solid #ccc;
   margin-right: 10px;
-border-radius: 50%;
+  border-radius: 50%;
 }
 #our-skills .container .testimonial .bullets li.active {
   background-color: var(--main-color);
 }
+#our-skills .skills {
+  display: flex;
+  flex-direction: column;
+}
+#our-skills .skills .skill-prog p {
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+#our-skills .skills .skill-prog .prog-bar {
+  height: 30px;
+  margin-bottom: 30px;
+  width: 100%;
+  background-color: #ccc;
+  position: relative;
+}
+#our-skills .skills .skill-prog .prog-bar span {
+  content: "";
+  position: relative;
+  height: 100%;
+  background-color: var(--main-color);
+  display: block;
+}
+#our-skills .skills .skill-prog .prog-bar span::before {
+  content: attr(data-progress);
+  position: absolute;
+  right: 0;
+  transform: translateX(50%);
+  top: -50px;
+  background-color: #000;
+  color: #fff;
+  padding: 8px;
+  border-radius: 6px;
+  text-align: center;
+}
+#our-skills .skills .skill-prog .prog-bar span::after {
+  content: "";
+  position: absolute;
+  border: 8px solid transparent;
+  top: -16px;
+  right: 0px;
+  border-top-color: #000;
+  transform: translateX(50%);
+}
 /* End Our Skills */
+/* Start Qoute */
+#qoute {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background-image: url(../images/quote.jpg);
+  background-size: cover;
+  color: #fff;
+  position: relative;
+}
+#qoute::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgb(0 0 0 / 75%);
+}
+#qoute .container {
+  position: relative;
+  text-align: center;
+}
+#qoute .container q {
+  font-size: 30px;
+  margin-bottom: 20px;
+  display: block;
+}
+/* End Qoute */
+/* Start Pricing */
+#pricing {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+#pricing .plans {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+}
+#pricing .plans .plan {
+  text-align: center;
+  background-color: #fcfcfc;
+}
+#pricing .plans .plan .head {
+  border-top: 1px solid var(--main-color);
+    border-bottom: 1px solid var(--main-color);
+    padding: 20px 0px;
+}
+#pricing .plans .plan .head h3 {
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+#pricing .plans .plan .head span {
+  font-weight: bold;
+  font-size: 30px;
+  position: relative;
+}
+#pricing .plans .plan .head span::before{
+  content: "$";
+  position: absolute;
+  left: -20px;  
+  font-size: 20px;
+  top: -10px;
+  font-weight: normal;
+}
+#pricing .plans .plan .head span::after {
+  content: "/MO";
+  position: absolute;
+  right: -50px;  
+  font-size: 20px;
+  bottom: -10px;
+  font-weight: normal;
+}
+/* End Pricing */
